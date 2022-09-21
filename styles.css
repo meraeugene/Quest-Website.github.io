@@ -535,9 +535,10 @@ nav{
     font-size: 1rem;
     margin: auto;
     text-align: center;
+    line-height: 3em;
   }
   .big{
-    font-size: 2rem;
+    font-size: 1.7em;
   }
   .font{
     font-size: 1.2rem;
@@ -545,19 +546,43 @@ nav{
   .explore-section .explore-text p{
     font-size: .7rem;
     line-height: 1.2rem;
-    width: 60%;
+    width: 80%;
     margin: auto;
   }
   .explore-section .explore-text h2{
     font-size: 2rem;
   }
+
+  .explore-grid-text{
+    font-size: .8em;
+  }
  
   .journal-text p{
-    font-size: .8rem;
-    width: 75%;
+    font-size: .7em;
+    width: 80%;
     margin: auto;
     line-height: 1.2rem;
   }
+
+  .journal-text h2{
+    font-size: 2.5em;
+  }
+
+
+  .journal-overlay-text h3{
+    font-size: .8em;
+  }
+  
+  .journal-overlay-text h2{
+    font-size: .8em;
+    margin-bottom: 0;
+  }
+  
+  .journal-overlay-text p{
+    font-size: .5em;
+    line-height: 1rem;
+  }
+
   .footer-flex{
     width: 100%;
     display: block;
