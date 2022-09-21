@@ -1,0 +1,705 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+:root{
+    --font-family-one: 'Josefin Sans', sans-serif;
+    --font-family-two:  'Rock Salt', cursive;
+    --h2-font-size: 2.5rem;
+    --p-font-size: 1rem;
+    --margin-bottom: 1rem;
+    --line-height: 1.5rem;
+}
+
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,700;1,700&display=swap');
+
+
+/*=============== HEADER & NAV ===============*/
+nav{
+    width: 100vw;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2rem 2rem rgba(0,0,0,0.2);
+  }
+
+  .nav__container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav__toggle-btn{
+    display: none;
+  }
+  
+  .nav__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: var(--font-family-one);
+  }
+
+  .nav__logo i{
+    margin-left: 10px;
+    font-size: 1.8rem;
+  }
+  
+  .nav__links{
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+    height: 100%;
+    list-style: none;
+  }
+  
+  .nav__links li{
+    height: 100%;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  .nav__links li a{
+    color: white;
+    font-weight: 500;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: opacity .5s ease;
+    position: relative;
+    text-decoration: none;
+    font-family: var(--font-family-one);
+    opacity: 0.8;
+  }
+  
+  .nav__links li a:hover{
+    opacity: 1;
+  }
+  
+  
+  @media screen and (max-width: 767px){
+    .nav__container{
+      width: 92%;
+      position: relative;
+    }
+  
+    .nav__links{
+      position: absolute;
+      top: 100%;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      align-items: flex-start;
+      display: none;
+    }
+  
+    .nav__links li{
+      width: 100%;
+      background-color: black;
+    }
+  
+  
+    /* animation header (3) */
+  .nav__links li {
+    animation: animation3 1s ease forwards;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  
+  .nav__links li:nth-child(2){
+    animation-delay: 300ms;
+  }
+  
+  .nav__links li:nth-child(3){
+    animation-delay: 600ms;
+  }
+  
+  .nav__links li:nth-child(4){
+    animation-delay: 900ms;
+  }
+  
+  .nav__links:nth-child(5){
+    animation-delay: 1.2s;
+  }
+  
+  @keyframes animation3{
+    to{
+      transform: rotate(0);
+      opacity: 1;
+    }
+  }
+  
+    .nav__links li a{
+      height: 4rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 5rem 0 2.5rem;
+      color: white;
+      border-top: 2px solid white;
+    }
+  
+    .nav__toggle-btn{
+      display: inline-block;
+      font-size: 2rem;
+      color: black;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+  
+    #nav__toggle-close{
+      display: none;
+    }
+  }
+  /* Show menu */
+  
+  /* Change background header */
+  .header-bg{
+    background-color: black;
+    box-shadow: 0 2px 4px hsla(203,71%,15%, .5);
+    transition: .5s ease-in-out;
+  }
+  
+/* hero section */
+.hero{
+    background-image:linear-gradient(rgba(107, 15, 61, 0.164),rgba(8, 28, 65, 0.2)),url(./assets/img/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.title-wrapper{
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Rock Salt', cursive;
+    color: white;
+    font-size: 1.6rem;
+    width: 80%;
+}
+
+.big{
+    font-size: 4.8rem;
+}
+
+.font{
+    font-family: var(--font-family-one);
+}
+
+/* explore section */
+.explore-section{
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    background-color: black;
+}
+
+.explore-section .explore-text{
+    text-align: center;
+    color: white;
+}
+
+.explore-section .explore-text h2{
+    font-family: var(--font-family-one);
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--margin-bottom);
+}
+
+.explore-section .explore-text p{
+    font-family: var(--font-family-one);
+    font-size: var(--p-font-size);
+    line-height: var(--line-height);
+}
+
+.swiper {
+  width: 80%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide::after{
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(to top,rgba(0, 0, 0,1),rgba(0,0,0,.1),rgba(0,0,0,.1),rgba(0,0,0,.1));
+  left: 0;
+  top: 0;
+  opacity: .9;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev {
+  color: #ffffff !important;
+}
+
+.swiper-button-next {
+  color: #ffffff !important;
+}
+
+.explore-grid-text{
+    position: absolute;
+    color: white;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-family: var(--font-family-one);
+    font-size: 1.3rem;
+    width: 100%;
+}
+
+.explore-grid-text h2{
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: var(--font-family-two);
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+}
+
+.explore-grid-text h3{
+    text-align: center;
+}
+
+/* journal section */
+.journal{
+    background-color: black;
+    color: white;
+    padding: 80px 0 70px 0;
+}
+
+.journal-text{
+    text-align: center;
+}
+
+.journal-text h2{
+    font-size: var(--h2-font-size);
+    font-family: var(--font-family-one);
+    margin-bottom: var(--margin-bottom);
+}
+
+.journal-text p{
+    font-size: var(--p-font-size);
+    font-family: var(--font-family-one);
+    line-height: var(--line-height);
+}
+
+.journal-overlay-text{
+  position: absolute;
+  color: white;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-family: var(--font-family-one);
+  width: 100%;
+}
+
+.journal-overlay-text h3{
+    font-size: .9rem;
+    font-family: var(--font-family-one);
+    margin-top: 20px;
+}
+
+.journal-overlay-text h2{
+    font-family: var(--font-family-two);
+    font-size: 1.4rem;
+    letter-spacing: .3rem;
+}
+
+.journal-overlay-text p{
+    font-family: var(--font-family-one);
+    font-size: .8rem;
+    line-height: 1.4rem;
+    width: 80%;
+    margin: auto;
+}
+
+.overlay::after{
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  background-image: linear-gradient(to top,rgba(0, 0, 0,1),rgba(0,0,0,.1));
+  left: 0;
+  top: 0;
+  opacity: .9;
+}
+
+/* footer section */
+.footer{
+    background-image:linear-gradient(rgba(107, 15, 61, 0.164),rgba(8, 28, 65, 0.2)),url(assets/img/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.footer-flex{
+    color: white;
+    margin: auto;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-family-one);
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-flex h3{
+    margin-right: 20px;
+}
+
+.footer-flex-two ul li{
+    display: inline-block;
+    font-family: var(--font-family-one);
+    font-size: 1rem;   
+    font-weight: bold; 
+    margin: 0 15px;
+}
+
+.footer-flex-two span{
+    font-size: 1rem;
+    position: absolute;
+    bottom: 2px;
+}
+
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  background-color: hsl(219,4%,16%);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: hsl(219,4%,24%);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(219,4%,32%);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* small devices */
+@media screen and (max-width: 320px){
+  .title-wrapper{
+    width: 90%;
+    font-size: 1rem;
+    margin: auto;
+  }
+
+  .title-wrapper h1{
+    text-align: center;
+  }
+
+.big{
+    font-size: 2.4rem;
+    line-height: 0;
+}
+
+.font{
+  font-size: 1.1rem;
+}
+
+.explore-section .explore-text h2{
+  font-size: 1.5rem;
+}
+
+.explore-section .explore-text p{
+  font-size: .8rem;
+  line-height: .9rem;
+  width: 80%;
+  margin: auto;
+}
+
+.explore-grid-text h2{
+  font-size: 1rem;
+}
+
+.explore-grid-text h3{
+  font-size: 1rem;
+}
+
+.explore-grid-text{
+  width: 90%;
+}
+
+.journal{
+  padding: 20px 0 70px 0;
+}
+
+.journal-text h2{
+  font-size: 1.5rem;
+}
+
+.journal-text p{
+    font-size: .8rem;
+    line-height: .9rem;
+    width: 80%;
+    margin: auto;
+}
+
+
+.journal-overlay-text h3{
+  font-size: .7rem;
+}
+
+.journal-overlay-text h2{
+  font-size: .7rem;
+  margin-bottom: 0;
+}
+
+.journal-overlay-text p{
+  font-size: .5rem;
+  line-height: 1rem;
+}
+
+.footer-flex{
+  width: 90%;
+  display: block;
+  text-align: center;
+}
+
+
+.footer-flex h3{
+  margin-right: 0px;
+  font-size: .7rem;
+  margin-bottom: 10px;
+}
+
+.footer-flex-two ul li{
+  font-size: .8rem;   
+  margin: 0 10px 0 0;
+}
+
+.footer-flex-two span{
+  display: none;
+}
+}
+
+@media screen and (min-width: 320px){
+  .title-wrapper{
+    width: 90%;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+  }
+  .big{
+    font-size: 2rem;
+  }
+  .font{
+    font-size: 1.2rem;
+  }
+  .explore-section .explore-text p{
+    font-size: .7rem;
+    line-height: 1.2rem;
+    width: 60%;
+    margin: auto;
+  }
+  .explore-section .explore-text h2{
+    font-size: 2rem;
+  }
+ 
+  .journal-text p{
+    font-size: .8rem;
+    width: 75%;
+    margin: auto;
+    line-height: 1.2rem;
+  }
+  .footer-flex{
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .footer-flex h3{
+    margin-right: 0px;
+    font-size: .7rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-flex-two ul li{
+    font-size: .8rem;   
+    margin: 0 10px 0 0;
+  }
+  
+  .footer-flex-two span{
+    display: none;
+  }
+}
+
+
+
+
+/* For medium devices */
+@media screen and (min-width: 576px){
+  .title-wrapper{
+    width: 90%;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+  }
+  .big{
+    font-size: 2.5rem;
+  }
+  .font{
+    font-size: 1.5rem;
+  }
+  .explore-section .explore-text p{
+    font-size: .9rem;
+    line-height: 1.5rem;
+    width: 70%;
+    margin: auto;
+  }
+  .explore-grid-text h2{
+    font-size: .7rem;
+  }
+  .explore-grid-text h3{
+    font-size: .9rem;
+  }
+  .explore-grid-text{
+    width: 90%;
+  }
+  .journal-text p{
+    font-size: .8rem;
+    line-height: 1rem;
+    width: 80%;
+    margin: auto;
+}
+.footer-flex{
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.footer-flex h3{
+  margin-right: 0px;
+  font-size: .7rem;
+  margin-bottom: 10px;
+}
+
+.footer-flex-two ul li{
+  font-size: .8rem;   
+  margin: 0 10px 0 0;
+}
+
+.footer-flex-two span{
+  display: none;
+}
+}
+
+@media screen and (min-width: 768px){
+  .title-wrapper{
+    width: 90%;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+  }
+  .big{
+    font-size: 3rem;
+  }
+  .font{
+    font-size: 1.7rem;
+  }
+  .explore-grid-text h2{
+    font-size: 1rem;
+  }
+  .explore-grid-text h3{
+    font-size: 1rem;
+  }
+  .journal-text p{
+    font-size: 1rem;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1040px){
+  .title-wrapper{
+    width: 90%;
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+  }
+  .big{
+    font-size: 5rem;
+  }
+  .font{
+    font-size: 2rem;
+  }
+ .explore-section .explore-text p{
+    font-size: 1rem;
+  }
+  .explore-section .explore-text{
+    width: 60%;
+    margin: auto;
+  }
+  .explore-grid-text h2{
+    font-size: 1.3rem;
+  }
+  .explore-grid-text h3{
+    font-size: 1.2rem;
+  }
+  .journal-text{
+    width: 60%;
+    margin: auto;
+  }
+  .journal-text p{
+    line-height: 1.5rem;
+  }
+  .footer-flex h3{
+    font-size: .7rem;
+  }
+  .footer-flex ul li{
+    font-size: 1rem;
+  }
+}
