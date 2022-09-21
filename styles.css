@@ -602,6 +602,12 @@ nav{
   .footer-flex-two span{
     display: none;
   }
+
+  .swiper {
+    width: 90%;
+    height: 100%;
+    margin-top: 40px;
+  }
 }
 
 
@@ -720,6 +726,9 @@ nav{
   }
   .journal-text p{
     line-height: 1.5rem;
+  }
+  .journal-overlay-text p{
+    font-size: .7em;
   }
   .footer-flex h3{
     font-size: .7rem;
